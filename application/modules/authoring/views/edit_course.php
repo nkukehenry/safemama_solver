@@ -57,7 +57,7 @@ foreach ($subjects as $sub) {
 <div class="form-group row col-md-12" style="margin-top: 1em;" >
         <label>Overview </label>
        
-       <textarea id="editor" name="overview" class="editor" style="min-height: 400px;" ><?php echo $course->overview; ?></textarea>
+       <textarea id="editor" name="overview" class="editor" style="min-height: 400px;" ><?php echo (!empty($course->overview))?$course->overview:$course->course_body; ?></textarea>
     </div>
 
 <div class="form-group row col-md-12" style="margin-top: 5em;" >

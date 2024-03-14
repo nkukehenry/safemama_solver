@@ -58,6 +58,7 @@ $coursedata["isYoutube"]=1;
 
 $coursedata['course_body']=$coursedata['overview'];
 $coursedata['description']=$coursedata['overview'];
+$coursedata['updated_at']   = date("Y-m-d H:i:s");
 
 
 if($_FILES['cover_image']){
@@ -115,7 +116,7 @@ move_uploaded_file($_FILES["cover_image"]["tmp_name"], $target_file);
 
      }//attachment uploaded
 
-   $saved=$this->authoring_mdl->saveCourse($coursedata);
+   $saved = $this->authoring_mdl->saveCourse($coursedata);
 
 	if($saved){
 		$msg ="<font color='green'>Course has been saved successfully</font> $errors";
@@ -154,7 +155,7 @@ move_uploaded_file($_FILES["cover_image"]["tmp_name"], $target_file);
         
         $coursedata['course_body'] = $coursedata['overview'];
         $coursedata['description'] = $coursedata['overview'];
-        $coursedata['update_at']   = date("Y-m-d H:i:s");
+        $coursedata['updated_at']   = date("Y-m-d H:i:s");
 
      //audio upload
      if($_FILES['audio']["size"]>0){
